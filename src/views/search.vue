@@ -44,7 +44,6 @@
             </div>
           </div>
         </div>
-
         <!-- 下面 -->
         <div>
           <div class="flex justify-around mt-[3vw]">
@@ -201,7 +200,6 @@ const { data } = useRequest(getsearch, {
     return response.data.data.showKeyword;
   },
 });
-
 // 列表内容的请求
 const { data: listData } = useRequest(getsearchlist, {
   formateResult(response) {
@@ -225,15 +223,12 @@ const { data: ddddd, run: lists } = useRequest(
     },
   }
 );
-
 //处理所有的id
 const getid = () => {
   // 创建一个数组来收集所有的 Promise
-
   const promises = listData?.value?.map((item) => {
     return useRequest(() => museicdata({ numid: item.id }));
   });
-
   // 使用 Promise.all 来等待所有的 Promise 解决
   Promise.all(promises)
     .then((songsArrays) => {
@@ -246,7 +241,6 @@ const getid = () => {
       console.log("错误");
     });
 };
-
 watchEffect(() => {
   searchcontent.value = data.value; //搜索框里的placeholder
   serchlist.value = listData.value; // 排行榜里的内容
@@ -255,3 +249,6 @@ watchEffect(() => {
   searchWordlist.value = ddddd.value;
 });
 </script>
+<style>
+	
+</style>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "ant-design-vue": "4.x",
+    "await-to-js": "^3.0.0",
     "axios": "^1.6.8",
     "install": "^0.13.0",
     "plyr": "^3.7.8",

@@ -1146,7 +1146,6 @@
                 </div>
               </div>
             </div>
-
             <div class="bg-[#fff] fixed z-[3] bottom-0 h-[12vw] w-[100vw]">
               <van-tabbar v-model="active" active-color="#ee0a24">
                 <van-tabbar-item icon="home-o">首页</van-tabbar-item>

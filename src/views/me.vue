@@ -263,13 +263,13 @@ import { Icon } from "@iconify/vue";
 import { getusedata, getCookie, getUser } from "@/service";
 import { useRequest } from "@/hooks";
 import { watchEffect } from "vue";
+import {data} from "autoprefixer";
 // 使用 localStorage.getItem() 方法来读取数据
 const usernameCookie = localStorage.getItem("UsenameCookie");
 const usernameId = localStorage.getItem("UsenameId");
 const Userdata = ref();
 const UserWord = ref();
 const UserId = ref();
-
 const { data: getdata } = useRequest(
   () => getusedata({ id: usernameId, cookie: usernameCookie }),
   {
@@ -283,14 +283,12 @@ const { data: getlist } = useRequest(() => getUser(), {
     return response.data;
   },
 });
-
 watch(
   () => getdata.value,
   (newValue) => {
-    if (newValue) {
+    if (newValue) {``
       console.log("newValue", newValue);
       UserWord.value = newValue;
-
       localStorage.setItem("Usename", newValue[0].creator.nickname);
     }
   },
@@ -314,5 +312,4 @@ watch(
   },
   { immediate: true }
 );
-
 </script>

@@ -31,7 +31,6 @@ export const getYouLove = () => request.get("/search/hot/detail");
 //*mv 内地视频
 export const getMVImg = ({ num, opction }) =>
   request.get(`/top/mv?limlt=${num}&area=${opction}`);
-
 // *mv视频
 export const getmv = ({ id }) => request.get(`/mv/url?id=${id}`);
 
